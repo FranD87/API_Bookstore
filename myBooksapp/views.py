@@ -23,7 +23,7 @@ def home(request):
 class BookList(APIView):
     authentication_classes = [TokenAuthentication]
     #permission_classes = [IsAuthenticatedOrReadOnly, IsAdminUser]
-    permission_classes = [AllowAny]
+    permission_classes = [IsNamedUserOnly]
 
     def get(self, request):
 

@@ -14,9 +14,7 @@ class IsActiveUserOnly(BasePermission):
 class IsNamedUserOnly(BasePermission):
     def is_name_good(self, name):
         result: bool = name != ""
-        print(f'name: {name}, is_name: {result}')
         return result
 
     def has_permission(self, request, view) -> bool:
-
         return self.is_name_good(request.user.first_name)

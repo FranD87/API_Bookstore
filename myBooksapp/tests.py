@@ -21,6 +21,7 @@ class BookTestCase(TestCase):
 
         # Create client
         self.client = APIClient()
+        self.client.force_authenticate(self.invalid_user)
 
     def test_book_list(self):
         url = reverse("book-app:book-list")
